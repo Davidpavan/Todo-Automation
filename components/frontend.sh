@@ -18,9 +18,14 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
-Head "Clonning Git Repo"
+Head "Change directory"
 
-git clone https://github.com/zelar-soft-todoapp/frontend.git &>>$LOG && cd /frontend && npm install &>>LOG && npm run build &>>$LOG
+cd /frontend
+Stat $?
+
+Head "Build packages"
+
+npm install &>>LOG && npm run build &>>$LOG
 Stat $?
 
 Head "Update Nginx Configuration"
