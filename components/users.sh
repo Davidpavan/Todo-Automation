@@ -4,8 +4,7 @@ source components/common.sh
 
 Head "Installing java-8"
 
-cd
-apt-get install openjdk-8-jdk -y &>>$LOG
+apt-get install openjdk-8-jdk -y
 Stat $?
 
 Head "Downloading Dependecies"
