@@ -14,6 +14,7 @@ Stat $?
 
 Head "Downloading Dependecies"
 
+cd
 git clone https://github.com/Davidpavan/users.git &>>$LOG
 cd users && mvn clean package &>>$LOG
 Stat $?
