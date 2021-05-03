@@ -21,7 +21,7 @@ mv Todo-login login &>>$LOG && cd login && rm -rf login &>>$LOG
 
 Head "Creating Service"
 
-mv /root/login/login.service /etc/systemd/system/login.service
+mv /go/src/login/login.service /etc/systemd/system/login.service
 
 Head "Get dependencies"
 
