@@ -7,7 +7,6 @@ wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz
 #Head "Adjusting the Path Variable"
 
 export PATH=$PATH:/usr/local/go/bin && source ~/.profile && go version &>>$LOG
-Stat $?
 
 Head "Getting Started with Go"
 
