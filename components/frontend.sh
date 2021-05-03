@@ -29,7 +29,8 @@ npm install &>>LOG && npm run build &>>$LOG
 Stat $?
 
 Head "Update Nginx Configuration"
-cd ~ && sed -i -e 's+/var/www/html+/root/frontend/dist+g' /etc/nginx/sites-available/default
+
+sed -i -e 's+/var/www/html+/root/frontend/dist+g' /etc/nginx/sites-available/default
 stat $?
 
 Head "Restart Nginx service"
