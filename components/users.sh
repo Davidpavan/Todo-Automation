@@ -5,7 +5,6 @@ source components/common.sh
 Head "Downgrading java version to java-8"
 
 cd
-apt-get remove openjdk-11-jdk-headless -y &>>$LOG
 apt-get install openjdk-8-jdk -y &>>$LOG
 Stat $?
 
