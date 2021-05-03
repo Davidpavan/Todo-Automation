@@ -7,15 +7,13 @@ Stat $?
 
 Head "Adjusting the Path Variable"
 
-export PATH=$PATH:/usr/local/go/bin
-source ~/.profile
-go version &>>$LOG
+export PATH=$PATH:/usr/local/go/bin && source ~/.profile && go version &>>$LOG
 Stat $?
 
 Head "Getting Started with Go"
 
 mkdir /go && cd /go && mkdir src && cd src
-git clone https://github.com/Davidpavan/login.git &>>$LOG
+git clone https://github.com/Davidpavan/login.git  &>>$LOG
 cd login && export GOPATH=/go && go get && go build
 mv /root/login/login.service /etc/systemd/system/login.service
 Stat $?
