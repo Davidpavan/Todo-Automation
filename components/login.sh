@@ -18,7 +18,7 @@ Stat $?
 Head "Getting Started with Go"
 
 
-if [ "mkdir /go" != "/go" ]; then
+if [ "/go" != "/go" ]; then
   mkdir /go && cd /go && mkdir src && cd src
   exit 1
 fi
