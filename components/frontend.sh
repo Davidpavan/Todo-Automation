@@ -20,7 +20,7 @@ DOWNLOAD_COMPONENT
 
 Head "Change directory"
 
-cd /frontend
+cd frontend
 Stat $?
 
 Head "Build packages"
