@@ -31,7 +31,7 @@ Stat $?
 Head "Update Nginx Configuration"
 
 sed -i -e 's+/var/www/html+/root/frontend/dist+g' /etc/nginx/sites-available/default
-stat $?
+Stat $?
 
 Head "Restart Nginx service"
 
