@@ -16,7 +16,7 @@ Head "Installing npm"
 apt install npm -y &>>$LOG
 Stat $?
 
-DOWNLOAD_COPONENT
+DOWNLOAD_COMPONENT
 
 Head "Clonning Git Repo & Installing npm depedencies"
 
@@ -27,7 +27,7 @@ Head "Update Nginx Configuration"
 cd ~ && sed -i -e 's+/var/www/html+/root/frontend/dist+g' /etc/nginx/sites-available/default
 stat $?
 Head "Restart Nginx service"
-systemctl nginx restart
+systemctl nginx start
 Stat $?
 
 Head "Starting npm"
