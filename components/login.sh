@@ -10,14 +10,16 @@ Stat $?
 
 Head "Adjusting the Path Variable"
 
-export PATH=$PATH:/usr/local/go/bin && source ~/.profile && go version &>>$LOG
+export PATH=$PATH:/usr/local/go/bin
+source ~/.profile
+go version
 Stat $?
 
 Head "Getting Started with Go"
 
 
-if [ "/go" != "/go" ]; then
-  cd /go && mkdir src && cd src
+if [ "mkdir /go" != "/go" ]; then
+  mkdir /go && cd /go && mkdir src && cd src
   exit 1
 fi
 
