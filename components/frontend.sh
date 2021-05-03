@@ -10,23 +10,23 @@ Stat $?
 
 Head "Installing Nodejs"
 apt install nodejs -y &>>$LOG
-Stat $1
+Stat $?
 
 Head "Installing npm"
 apt install npm -y &>>$LOG
-Stat $1
+Stat $?
 
 DOWNLOAD_COPONENT
 
 Head "Clonning Git Repo & Installing npm depedencies"
 
 git clone https://github.com/zelar-soft-todoapp/frontend.git && cd frontend && npm install && npm run build
-Stat $1
+Stat $?
 
 Head "Restart Nginx service"
 systemctl nginx restart
-Stat $1
+Stat $?
 
 Head "Starting npm"
 npm start
-Stat $1
+Stat $?
