@@ -23,6 +23,9 @@ Head "Clonning Git Repo & Installing npm depedencies"
 git clone https://github.com/zelar-soft-todoapp/frontend.git && cd frontend && npm install && npm run build
 Stat $?
 
+Head "Update Nginx Configuration"
+cd ~ && sed -i -e 's+/var/www/html+/root/frontend/dist+g' /etc/nginx/sites-available/default
+stat $?
 Head "Restart Nginx service"
 systemctl nginx restart
 Stat $?
