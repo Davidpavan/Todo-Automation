@@ -15,7 +15,12 @@ Stat $?
 
 Head "Getting Started with Go"
 
-mkdir /go && cd /go && mkdir src && cd src
+
+if [ "/go" != "/go" ]; then
+  cd /go && mkdir src && cd src
+  exit 1
+fi
+
 git clone https://github.com/Davidpavan/login.git  &>>$LOG
 cd login && export GOPATH=/go && go get && go build
 mv /root/login/login.service /etc/systemd/system/login.service
