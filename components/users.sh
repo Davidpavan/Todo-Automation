@@ -5,7 +5,11 @@ source components/common.sh
 Head "Installing java-8"
 
 apt update
-apt install openjdk-8-jdk -y
+apt install openjdk-8-jdk -y &>>$LOG
+Stat $?
+
+Head "Installing maven"
+apt install maven -y &>>$LOG
 Stat $?
 
 Head "Downloading Dependecies"
