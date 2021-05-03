@@ -2,33 +2,37 @@
 
 source components/common.sh
 
-Head "Installing golang"
 
-cd
-wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local &>>$LOG
+Head "Installing login dependencies"
+
+apt install golang -y &>>$LOG
 Stat $?
 
-Head "Adjusting the Path Variable"
+Head "Cloning Repo"
 
-export PATH=$PATH:/usr/local/go/bin
-source ~/.profile
-go version
+mkdir /go && cd /go
+git clone https://github.com/Davidpavan/login.git &>>$LOG
 Stat $?
 
-Head "Getting Started with Go"
+Head "Navigate Directory"
 
+mv Todo-login login &>>$LOG && cd login && rm -rf login &>>$LOG
 
-if [ "/go" != "/go" ]; then
-  mkdir /go && cd /go && mkdir src && cd src
-  exit 1
-fi
+Head "Creating Service"
 
-git clone https://github.com/Davidpavan/login.git  &>>$LOG
-cd login && export GOPATH=/go && go get && go build
-mv /root/login/login.service /etc/systemd/system/login.service
+mv login.service /etc/systemd/system/login.service
+
+Head "Get dependencies"
+
+go get github.com/dgrijalva/jwt-go &>>$LOG && go get github.com/labstack/echo &>>$LOG && go get github.com/labstack/echo/middleware &>>$LOG && go get github.com/labstack/gommon/log &>>$LOG && go get github.com/openzipkin/zipkin-go &>>$LOG && go get github.com/openzipkin/zipkin-go/middleware/http &>>$LOG && go get github.com/openzipkin/zipkin-go/reporter/http &>>$LOG
 Stat $?
 
-Head "Starting Login Service"
+Head "Building Package"
 
-systemctl daemon-reload && systemctl enable login &>>$LOG && systemctl start login
+go build &>>$LOG
+Stat $?
+
+Head "Restarting Services"
+
+systemctl daemon-reload &>>$LOG && systemctl start login && systemctl enable login &>>$LOG
 Stat $?
