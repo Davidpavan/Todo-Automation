@@ -29,4 +29,4 @@ Stat $1
 
 Head "Starting npm"
 npm start
-Stat $
+Stat $1
