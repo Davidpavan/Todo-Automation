@@ -2,7 +2,7 @@
 
 source components/common.sh
 
-Head "Downgrading java version to java-8"
+Head "Installing java-8"
 
 cd
 apt-get install openjdk-8-jdk -y &>>$LOG
