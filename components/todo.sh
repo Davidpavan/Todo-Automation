@@ -18,7 +18,7 @@ Stat $?
 
 Head "Staring Service"
 
-mv /root/todo/todo.service /etc/systemd/system/todo.service
+mv /root/Todo-Automation/todo/todo.service /etc/systemd/system/todo.service
 systemctl daemon-reload && systemctl enable todo &>>$LOG && systemctl start todo
 Stat $?
 
