@@ -30,6 +30,7 @@ Stat $?
 
 Head "Building Package"
 
+cd /go && cd src && cd login
 go build &>>$LOG
 Stat $?
 
