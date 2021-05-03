@@ -5,6 +5,7 @@ source components/common.sh
 
 Head "Installing login dependencies"
 
+cd
 apt install golang -y &>>$LOG
 Stat $?
 
