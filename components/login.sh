@@ -4,7 +4,7 @@ Head "Installing golang"
 
 wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local &>>$LOG
 
-Head "Adjusting the Path Variable"
+#Head "Adjusting the Path Variable"
 
 export PATH=$PATH:/usr/local/go/bin && source ~/.profile && go version &>>$LOG
 Stat $?
