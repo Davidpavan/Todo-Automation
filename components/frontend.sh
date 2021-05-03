@@ -18,9 +18,9 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
-Head "Clonning Git Repo & Installing npm depedencies"
+Head "Clonning Git Repo"
 
-git clone https://github.com/zelar-soft-todoapp/frontend.git &>>$LOG && cd frontend && npm install &>>LOG && npm run build &>>$LOG
+git clone https://github.com/zelar-soft-todoapp/frontend.git &>>$LOG && cd /frontend && npm install &>>LOG && npm run build &>>$LOG
 Stat $?
 
 Head "Update Nginx Configuration"
