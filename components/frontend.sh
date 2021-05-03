@@ -34,10 +34,12 @@ sed -i -e 's+/var/www/html+/root/frontend/dist+g' /etc/nginx/sites-available/def
 stat $?
 
 Head "Restart Nginx service"
+
 nginx -t &>>$LOG
 systemctl restart nginx
 Stat $?
 
 Head "Starting npm"
+
 npm start
 Stat $?
