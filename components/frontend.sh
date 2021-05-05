@@ -3,7 +3,7 @@
 source components/common.sh
 
 OS_PREREQ
-cd
+
 Head "Installing Nginx"
 apt install nginx -y &>>$LOG
 Stat $?
@@ -19,7 +19,12 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head "Change directory"
+
 cd frontend
+Stat $?
+
+Head "Build packages"
+
 npm install &>>LOG && npm run build &>>$LOG
 Stat $?
 
