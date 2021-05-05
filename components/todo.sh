@@ -16,10 +16,6 @@ cd todo
 npm install &>>$LOG
 Stat $?
 
-Head "Update EndPoints in Service File"
-sed -i -e "s/REDIS_DNSNAME/redis.pavanzs.online/" /root/Todo-Automation/todo/todo.service
-Stat $?
-
 Head "Staring Service"
 
 mv /root/Todo-Automation/todo/todo.service /etc/systemd/system/todo.service
@@ -29,4 +25,4 @@ Stat $?
 Head "Start npm service"
 
 npm start
-Stat $?
+Stat $LOG
