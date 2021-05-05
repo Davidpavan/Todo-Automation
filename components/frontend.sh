@@ -20,10 +20,7 @@ DOWNLOAD_COMPONENT
 
 Head "Change directory"
 
-if [ frontend != frontend ]; then
-  cd frontend
-fi
-Stat $?
+cd frontend
 
 Head "Build packages"
 
