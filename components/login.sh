@@ -11,7 +11,7 @@ Stat $?
 
 Head "Cloning Repo"
 cd
-mkdir /go && cd /go
+mkdir /go && cd /go && mkdir src && cd src
 git clone https://github.com/Davidpavan/login.git &>>$LOG
 Stat $?
 
