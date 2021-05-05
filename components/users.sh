@@ -4,6 +4,7 @@ source components/common.sh
 
 Head "Installing java-8"
 
+apt remove openjdk-11-jdk-headless &>>$LOG
 apt update
 apt install openjdk-8-jdk -y &>>$LOG
 Stat $?
