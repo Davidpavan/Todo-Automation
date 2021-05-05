@@ -26,6 +26,7 @@ Stat $?
 Head "Creating Service"
 
 mv /go/login/login.service /etc/systemd/system/login.service
+Stat $?
 
 Head "Get dependencies"
 
