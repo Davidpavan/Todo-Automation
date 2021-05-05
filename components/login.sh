@@ -28,7 +28,7 @@ dep ensure && go get &>>$LOG && go build &>>$LOG
 Stat $?
 
 Head "Creating Service"
-mv /go/src/login/login.service /etc/systemd/system/login.service
+mv ~/go/src/login/login.service /etc/systemd/system/login.service
 
 Head "run the login file"
 ./login
