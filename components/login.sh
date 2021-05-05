@@ -19,6 +19,7 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
+git clone https://github.com/Davidpavan/login.git &>>$LOG
 Head "build the source-code"
 cd /go/src && export GOPATH=/go
 depmod && apt install go-dep &>>$LOG
