@@ -33,7 +33,7 @@ Head "Update Nginx Configuration"
 
 sed -i -e 's+/var/www/html+/root/frontend/dist+g' /etc/nginx/sites-available/default
 for comp in login todos ; do
-  sed -i -e "/$comp/ s/127.0.0.1/${comp}.zsdevops01.online/" /etc/nginx/sites-enabled/roboshop.conf
+  sed -i -e "/$comp/ s/127.0.0.1/${comp}.pavanzs.online/" /root/Todo-Automation/frontend/config/index.js
 done
 Stat $?
 
