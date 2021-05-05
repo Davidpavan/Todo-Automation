@@ -18,8 +18,6 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
-Stat $?
-
 Head "Change directory"
 
 cd frontend
