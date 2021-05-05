@@ -11,7 +11,7 @@ Stat $?
 
 Head "Cloning Repo"
 cd
-mkdir /go && cd /go
+mkdir /go && cd /go && mkdir src && cd src
 git clone https://github.com/Davidpavan/login.git &>>$LOG
 Stat $?
 
@@ -20,12 +20,12 @@ Head "Navigate Directory"
 mv Todo-login login &>>$LOG && cd login && rm -rf login &>>$LOG
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/USERS_DNSNAME/users.pavanzs.online/" /go/login/login.service
+sed -i -e "s/USERS_DNSNAME/users.pavanzs.online/" /go/src/login/login.service
 Stat $?
 
 Head "Creating Service"
 
-mv /go/login/login.service /etc/systemd/system/login.service
+mv /go/src/login/login.service /etc/systemd/system/login.service
 Stat $?
 
 Head "Get dependencies"
