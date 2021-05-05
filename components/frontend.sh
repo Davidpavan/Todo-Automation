@@ -16,8 +16,9 @@ Head "Installing npm"
 apt install npm -y &>>$LOG
 Stat $?
 
-DOWNLOAD_COMPONENT
-&>>$LOG
+Head "Download_Component"
+
+https://github.com/Davidpavan/frontend-1.git &>>$LOG
 Stat $?
 
 Head "Change directory"
