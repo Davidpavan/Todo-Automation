@@ -2,32 +2,34 @@
 
 source components/common.sh
 
-apt update &>>$LOG
+OS_PREREQ
 
-Head "Installing login dependencies"
-cd
-apt install golang -y &>>$LOG
+head "Installing golang"
+
+cd /root
+wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local &>>$LOG
+export PATH=$PATH:/usr/local/go/bin
+source ~/.profile
 Stat $?
-
-Head "Cloning Repo"
-mkdir /go && cd /go && mkdir src && cd src
-git clone https://github.com/Davidpavan/login.git &>>$LOG
+head "version of golang"
+go version
 Stat $?
-
-Head "Building Package"
-cd /go && cd src && cd login && export GOPATH=/go && go get
-go build &>>$LOG
+head "To create a directory"
+    mkdir /go && cd /go
+head "To clone the git Repo in to login"
+git clone https://github.com/Davidpavan/Todo-Automation.git &>>$LOG
+cd login && export GOPATH=/go
+apt install go-dep &>>$LOG
 Stat $?
-
-Head "Update EndPoints in Service File"
-sed -i -e "s/USERS_DNSNAME/users.pavanzs.online/" /go/src/login/login.service
+head "to build the golang"
+go get
+go build
 Stat $?
-
-Head "Creating Service"
-
-mv /go/src/login/login.service /etc/systemd/system/login.service
-Stat $?
-
-Head "Restarting Services"
-systemctl daemon-reload &>>$LOG && systemctl start login && systemctl enable login &>>$LOG
+head "To create a systemd file"
+ mv login.service /etc/systemd/system/login.service
+head "To start a service"
+systemctl daemon-reload &&
+service login start &&
+service login restart &&
+service login status
 Stat $?
