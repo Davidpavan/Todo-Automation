@@ -20,10 +20,6 @@ DOWNLOAD_COMPONENT
 
 Head "Change directory"
 cd frontend
-Stat $?
-
-Head "Build packages"
-
 npm install &>>LOG && npm run build &>>$LOG
 Stat $?
 
