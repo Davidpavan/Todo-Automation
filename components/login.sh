@@ -12,7 +12,7 @@ Stat $?
 Head "Cloning Repo"
 
 mkdir /go && cd /go
-git clone https://github.com/Davidpavan/login.git &>>$LOG
+git clone https://github.com/Davidpavan/login.git. &>>$LOG
 Stat $?
 
 Head "Navigate Directory"
