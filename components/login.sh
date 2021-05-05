@@ -2,33 +2,33 @@
 
 source components/common.sh
 
-OS_PREREQ
+Head "installing golang"
+apt update &>>$LOG
+wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | tar -xz -C /usr/local &>>$LOG
+Stat $?
 
-Head "Installing golang"
-cd /root
-wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local &>>$LOG
+Head "adjusting path variables"
 export PATH=$PATH:/usr/local/go/bin
 source ~/.profile
+go version &>>$LOG
 Stat $?
-Head "version of golang"
-go version
+
+Head "creating a new directory"
+mkdir -p ~/go/src &>>$LOG && cd ~/go/src &>>$LOG
 Stat $?
-Head "To create a directory"
-    mkdir /go && cd /go && mkdir src && cd src
-Head "To clone the git Repo in to login"
-git clone https://github.com/Davidpavan/login.git &>>$LOG
-cd login && export GOPATH=/go
-apt install go-dep &>>$LOG
+
+DOWNLOAD_COMPONENT
+
+Head "build the source-code"
+cd /go/src && export GOPATH=/go
+depmod && apt install go-dep &>>$LOG
+cd login
+dep ensure && go get &>>$LOG && go build &>>$LOG
 Stat $?
-Head "to build the golang"
-go get
-go build
-Stat $?
-Head "To create a systemd file"
- mv login.service /etc/systemd/system/login.service
-Head "To start a service"
-systemctl daemon-reload &&
-service login start &&
-service login restart &&
-service login status
+
+Head "Creating Service"
+mv /go/src/login/login.service /etc/systemd/system/login.service
+
+Head "run the login file"
+./login
 Stat $?
