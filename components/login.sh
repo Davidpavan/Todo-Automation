@@ -15,7 +15,7 @@ head "version of golang"
 go version
 Stat $?
 head "To create a directory"
-    mkdir /go && cd /go
+    mkdir /go && cd /go && mkdir src && cd src
 
 head "To clone the git Repo in to login"
 git clone https://github.com/Davidpavan/Todo-Automation.git &>>$LOG
