@@ -21,7 +21,7 @@ DOWNLOAD_COMPONENT
 
 git clone https://github.com/Davidpavan/login.git &>>$LOG
 Head "build the source-code"
-cd /go/src/login && export GOPATH=/go
+cd ~/go/src/login && export GOPATH=/go
 depmod && apt install go-dep &>>$LOG
 cd login
 dep ensure && go get &>>$LOG && go build &>>$LOG
