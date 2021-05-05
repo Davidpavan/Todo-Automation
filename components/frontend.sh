@@ -2,8 +2,6 @@
 
 source components/common.sh
 
-DOMAIN="pavanzs.online"
-
 OS_PREREQ
 
 Head "Installing Nginx"

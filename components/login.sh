@@ -29,7 +29,7 @@ Stat $?
 
 Head "export user-api-address"
 export AUTH_API_PORT=8080
-export USERS_API_ADDRESS=http://login.pavanzs.online:8080
+export USERS_API_ADDRESS=http://192.168.0.253:8080
 Stat $?
 
 Head "run the login file"
