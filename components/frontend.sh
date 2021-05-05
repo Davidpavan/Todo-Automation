@@ -5,6 +5,7 @@ source components/common.sh
 OS_PREREQ
 
 Head "Installing Nginx"
+cd
 apt install nginx -y &>>$LOG
 Stat $?
 
