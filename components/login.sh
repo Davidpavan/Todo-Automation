@@ -35,7 +35,7 @@ fi
 Stat $?
 
 Head "Building Package"
-cd /go  && cd src && cd login && go get
+cd /go  && cd src && cd login && export GOPATH=/go && go get
 go build &>>$LOG
 Stat $?
 
