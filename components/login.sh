@@ -17,7 +17,7 @@ git clone https://github.com/Davidpavan/login.git &>>$LOG
 Stat $?
 
 Head "Building Package"
-cd login && export GOPATH=/go && go get
+mkdir /go && cd /go && cd src && cd login && export GOPATH=/go && go get
 go build &>>$LOG
 Stat $?
 
