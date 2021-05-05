@@ -27,8 +27,10 @@ cd login
 dep ensure && go get &>>$LOG && go build &>>$LOG
 Stat $?
 
-Head "Creating Service"
-mv /go/src/login/login.service /etc/systemd/system/login.service
+Head "export user-api-address"
+export AUTH_API_PORT=8080
+export USERS_API_ADDRESS=http://login.pavanzs.online:8080
+Stat $?
 
 Head "run the login file"
 ./login
