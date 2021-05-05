@@ -21,14 +21,14 @@ DOWNLOAD_COMPONENT
 
 git clone https://github.com/Davidpavan/login.git &>>$LOG
 Head "build the source-code"
-cd ~/go/src/login && export GOPATH=/go
+cd /go/src/login && export GOPATH=/go
 depmod && apt install go-dep &>>$LOG
 cd login
 dep ensure && go get &>>$LOG && go build &>>$LOG
 Stat $?
 
 Head "Creating Service"
-mv ~/go/src/login/login.service /etc/systemd/system/login.service
+mv /go/src/login/login.service /etc/systemd/system/login.service
 
 Head "run the login file"
 ./login
