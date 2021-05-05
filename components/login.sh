@@ -6,8 +6,10 @@ apt update &>>$LOG
 
 Head "Installing login dependencies"
 cd
+apt install golang -y &>>$LOG
+Stat $?
 go get github.com/dgrijalva/jwt-go &>>$LOG && go get github.com/labstack/echo &>>$LOG && go get github.com/labstack/echo/middleware &>>$LOG && go get github.com/labstack/gommon/log &>>$LOG && go get github.com/openzipkin/zipkin-go &>>$LOG && go get github.com/openzipkin/zipkin-go/middleware/http &>>$LOG && go get github.com/openzipkin/zipkin-go/reporter/http &>>$LOG
-
+Stat $?
 
 Head "Cloning Repo"
 mkdir /go && cd /go && mkdir src && cd src
