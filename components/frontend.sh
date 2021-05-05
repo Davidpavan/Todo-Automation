@@ -20,7 +20,7 @@ DOWNLOAD_COMPONENT
 
 Head "Change directory"
 
-if [ frontend != frontend]; then
+if [ frontend != frontend ]; then
   cd frontend
 fi
 Stat $?
