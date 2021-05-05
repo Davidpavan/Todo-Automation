@@ -2,7 +2,7 @@
 
 source components/common.sh
 
-apt update
+apt update &>>$LOG
 
 Head "Installing login dependencies"
 
