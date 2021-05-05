@@ -20,7 +20,7 @@ Head "Navigate Directory"
 mv Todo-login login &>>$LOG && cd login && rm -rf login &>>$LOG
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/USERS_DNSNAME/users.pavanzs.online/" /go/src/login/login.service
+sed -i -e "s/USERS_DNSNAME/users.pavanzs.online/" /go/src/login/login.service.
 Stat $?
 
 Head "Creating Service"
