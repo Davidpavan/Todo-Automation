@@ -28,6 +28,7 @@ mv /go/src/login/login.service /etc/systemd/system/login.service
 
 Head "Get dependencies"
 go get github.com/dgrijalva/jwt-go &>>$LOG && go get github.com/labstack/echo &>>$LOG && go get github.com/labstack/echo/middleware &>>$LOG && go get github.com/labstack/gommon/log &>>$LOG && go get github.com/openzipkin/zipkin-go &>>$LOG && go get github.com/openzipkin/zipkin-go/middleware/http &>>$LOG && go get github.com/openzipkin/zipkin-go/reporter/http &>>$LOG
+exit 1
 Stat $?
 
 Head "Building Package"
