@@ -17,6 +17,8 @@ apt install npm -y &>>$LOG
 Stat $?
 
 DOWNLOAD_COMPONENT
+&>>$LOG
+Stat $?
 
 Head "Change directory"
 
