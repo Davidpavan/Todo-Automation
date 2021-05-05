@@ -18,7 +18,7 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
-https://github.com/Davidpavan/frrontend.git &>>$LOG
+&>>$LOG
 Stat $?
 
 Head "Change directory"
