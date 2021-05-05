@@ -11,11 +11,13 @@ wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz
 export PATH=$PATH:/usr/local/go/bin
 source ~/.profile
 Stat $?
+
 head "version of golang"
 go version
 Stat $?
 head "To create a directory"
     mkdir /go && cd /go
+
 head "To clone the git Repo in to login"
 git clone https://github.com/Davidpavan/Todo-Automation.git &>>$LOG
 cd login && export GOPATH=/go
