@@ -2,17 +2,17 @@
 
 source components/common.sh
 
-apt update
 
 Head "Installing login dependencies"
 
+cd
 apt install golang -y &>>$LOG
 Stat $?
 
 Head "Cloning Repo"
 
-mkdir /go && cd /go
-git clone https://github.com/naveenzelarsoft/Todo-login.git &>>$LOG
+mkdir /go && cd /go && mkdir src && cd src
+git clone https://github.com/Davidpavan/login.git &>>$LOG
 Stat $?
 
 Head "Navigate Directory"
@@ -24,11 +24,9 @@ sed -i -e "s/USERS_DNSNAME/users.pavanzs.online/" /go/src/login/login.service
 Stat $?
 
 Head "Creating Service"
-
 mv /go/src/login/login.service /etc/systemd/system/login.service
 
 Head "Get dependencies"
-
 go get github.com/dgrijalva/jwt-go &>>$LOG && go get github.com/labstack/echo &>>$LOG && go get github.com/labstack/echo/middleware &>>$LOG && go get github.com/labstack/gommon/log &>>$LOG && go get github.com/openzipkin/zipkin-go &>>$LOG && go get github.com/openzipkin/zipkin-go/middleware/http &>>$LOG && go get github.com/openzipkin/zipkin-go/reporter/http &>>$LOG
 Stat $?
 
