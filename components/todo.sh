@@ -29,4 +29,4 @@ Stat $?
 Head "Start npm service"
 
 npm start
-Stat $LOG
+Stat $?

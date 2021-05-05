@@ -2,36 +2,36 @@
 
 source components/common.sh
 
-Head "installing golang"
-apt update &>>$LOG
+OS_UPDATE
+
+Head " Installing golang"
 wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | tar -xz -C /usr/local &>>$LOG
 Stat $?
 
-Head "adjusting path variables"
-export PATH=$PATH:/usr/local/go/bin
-source ~/.profile
+Head " Adjusting path variables"
+export PATH=$PATH:/usr/local/go/bin &>>$LOG
+source ~/.profile &>>$LOG
 go version &>>$LOG
 Stat $?
 
-Head "creating a new directory"
-mkdir -p ~/go/src &>>$LOG && cd ~/go/src &>>$LOG
+Head " Creating a new directory"
+mkdir -p ~/go && cd ~/go && mkdir src && cd src &>>$LOG
 Stat $?
 
 DOWNLOAD_COMPONENT
 
-git clone https://github.com/Davidpavan/login.git &>>$LOG
-Head "build the source-code"
-cd /go/src/login && export GOPATH=/go
+Head " Navigate Directory"
+cd login &>>$LOG
+Stat $?
+
+Head " Build the Source-code"
+cd /go/src && export GOPATH=/go &>>$LOG
 depmod && apt install go-dep &>>$LOG
 cd login
 dep ensure && go get &>>$LOG && go build &>>$LOG
 Stat $?
 
-Head "export user-api-address"
-export AUTH_API_PORT=8080
-export USERS_API_ADDRESS=http://192.168.0.253:8080
-Stat $?
+Head "Creating Service"
 
-Head "run the login file"
-./login
+mv /root/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
 Stat $?
