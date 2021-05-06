@@ -21,7 +21,6 @@ DOWNLOAD_COMPONENT
 
 Head "Change directory"
 cd frontend &>>$LOG
-Stat $?
 
 Head "Build packages"
 
