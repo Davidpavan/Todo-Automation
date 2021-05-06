@@ -21,6 +21,10 @@ DOWNLOAD_COMPONENT
 
 Head "Change directory"
 cd frontend &>>$LOG
+If [ $? -eq 0]; then
+  cd frontend
+  Stat $?
+fi
 
 Head "Build packages"
 
