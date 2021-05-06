@@ -15,11 +15,9 @@ Head "Installing maven"
 apt install maven -y &>>$LOG
 Stat $?
 
-Head "Downloading Dependecies"
+DOWNLOAD_COMPONENT
 
-cd
-git clone https://github.com/Davidpavan/users.git &>>$LOG
-cd users && mvn clean package &>>$LOG
+mvn clean package &>>$LOG
 Stat $?
 
 Head "Updating service"

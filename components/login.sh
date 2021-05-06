@@ -20,7 +20,6 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
-
 Head " Build the Source-code"
 cd ~/go/src && export GOPATH=~/go &>>$LOG
 depmod && apt install go-dep &>>$LOG
