@@ -33,6 +33,11 @@ Head "Update Nginx Configuration"
 sed -i -e 's+/var/www/html+/root/frontend/dist+g' /etc/nginx/sites-available/default
 Stat $?
 
+Head " Export DOMAINS"
+
+export AUTH_API_ADDRESS=http://login.pavanzs.online:8080 && export TODOS_API_ADDRESS=http://todo.pavanzs.online:8080
+Stat $?
+
 Head "Restart Nginx service"
 
 nginx -t &>>$LOG
