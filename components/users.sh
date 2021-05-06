@@ -22,7 +22,7 @@ Stat $?
 
 Head "Updating service"
 
-mv /root/users/users.service /etc/systemd/system/users.service &>>$LOG
+mv /root/Todo-Automation/users/users.service /etc/systemd/system/users.service &>>$LOG
 
 Head "Starting Service"
 
