@@ -1,7 +1,9 @@
 #!/bin/bash
 
 source components/common.sh
+
 OS_PREREQ
+su -
 
 Head "Install Redis"
 apt install redis-server -y &>>$LOG
