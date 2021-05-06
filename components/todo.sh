@@ -23,8 +23,3 @@ mv /root/Todo-Automation/todo/todo.service /etc/systemd/system/todo.service &>>$
 Head "Starting Service"
 systemctl daemon-reload && systemctl enable todo &>>$LOG && systemctl start todo
 Stat $?
-
-Head "Start npm service"
-
-npm start
-Stat $LOG
