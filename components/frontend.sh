@@ -17,7 +17,7 @@ Head "Installing npm"
 apt install npm -y &>>$LOG
 Stat $?
 
-DOWNLOAD_COMPONENT
+DOWNLOAD_COMPONENT &>>$LOG
 
 If [ -f ~/frontend]; then
   cd frontend
