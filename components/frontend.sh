@@ -19,12 +19,6 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
-Head "changing directory"
-
-If [ -f ~/frontend]; then
-  cd frontend
-  Stat $?
-fi
 
 Head "Build packages"
 
