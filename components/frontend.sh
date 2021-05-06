@@ -20,8 +20,8 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head "Change directory"
-ls frontend &>>$LOG
-If [ $? -eq 0]; then
+cd frontend &>>$LOG
+If [ -d ~/frontend]; then
   cd frontend
   Stat $?
 fi
