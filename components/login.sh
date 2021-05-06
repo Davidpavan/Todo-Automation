@@ -2,7 +2,7 @@
 
 source components/common.sh
 
-OS_UPDATE
+OS_PREREQ
 
 Head " Installing golang"
 wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | tar -xz -C /usr/local &>>$LOG

@@ -2,6 +2,8 @@
 
 source components/common.sh
 
+OS_PREREQ
+
 Head "Installing java-8"
 
 apt update
