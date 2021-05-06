@@ -17,7 +17,7 @@ Head "Installing npm"
 apt install npm -y &>>$LOG
 Stat $?
 
-DOWNLOAD_COMPONENT &>>$LOG
+DOWNLOAD_COMPONENT
 
 Head "changing directory"
 
