@@ -24,12 +24,9 @@ Stat $?
 
 Head "Updating service"
 
-mv /root/users/users.service /etc/systemd/system/users.service
-Stat $?
+mv /root/users/users.service /etc/systemd/system/users.service &>>$LOG
 
 Head "Starting Service"
 
-systemctl daemon-reload
-systemctl enable users
-systemctl start users
+systemctl daemon-reload && systemctl enable users && systemctl start users
 Stat $?

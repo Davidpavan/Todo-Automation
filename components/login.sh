@@ -38,7 +38,6 @@ Stat $?
 Head "Creating Service"
 
 mv /root/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
-Stat $?
 
 Head "starting service"
 systemctl daemon-reload && systemctl enable login &>>$LOG && systemctl start login

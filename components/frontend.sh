@@ -20,7 +20,7 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head "Change directory"
-cd frontend
+cd frontend &>>$LOG
 Stat $?
 
 Head "Build packages"

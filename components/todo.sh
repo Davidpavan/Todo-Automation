@@ -20,9 +20,10 @@ Head "Update EndPoints in Service File"
 sed -i -e "s/REDIS_DNSNAME/redis.pavanzs.online/" /root/Todo-Automation/todo/todo.service
 Stat $?
 
-Head "Staring Service"
+Head "Moving Servicefile"
+mv /root/Todo-Automation/todo/todo.service /etc/systemd/system/todo.service &>>$LOG
 
-mv /root/Todo-Automation/todo/todo.service /etc/systemd/system/todo.service
+Head "Starting Service"
 systemctl daemon-reload && systemctl enable todo &>>$LOG && systemctl start todo
 Stat $?
 
