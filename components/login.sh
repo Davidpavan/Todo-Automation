@@ -20,9 +20,6 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
-Head " Navigate Directory"
-cd login &>>$LOG
-Stat $?
 
 Head " Build the Source-code"
 cd ~/go/src && export GOPATH=~/go &>>$LOG
