@@ -31,6 +31,10 @@ cd login
 dep ensure && go get &>>$LOG && go build &>>$LOG
 Stat $?
 
+Head "Update EndPoints in Service File"
+sed -i -e "s/USERS_DNSNAME/users.pavanzs.online/" /root/go/src/login/login.service
+Stat $?
+
 Head "Creating Service"
 
 mv /root/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
