@@ -19,7 +19,6 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
-Head "Change directory"
 If [ -f ~/frontend]; then
   cd frontend
   Stat $?
