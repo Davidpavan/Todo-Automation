@@ -9,10 +9,8 @@ Head "Install NPM"
 apt install npm -y &>>$LOG
 Stat $?
 
-Head "Downloadind dependencies"
+DOWNLOAD_COMPONENT
 
-git clone https://github.com/Davidpavan/todo.git &>>$LOG
-cd todo
 npm install &>>$LOG
 Stat $?
 
