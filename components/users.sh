@@ -17,7 +17,6 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
-cd users
 mvn clean package &>>$LOG
 Stat $?
 
