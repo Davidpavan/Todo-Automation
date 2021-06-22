@@ -22,7 +22,7 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
-cd login && export GOPATH=~/go &>>$LOG
+export GOPATH=~/go &>>$LOG
 go get &>>$LOG && go build &>>$LOG
 Stat $?
 
