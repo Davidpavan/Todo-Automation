@@ -41,7 +41,3 @@ nginx -t &>>$LOG
 systemctl restart nginx
 Stat $?
 
-Head "Starting npm"
-
-npm start
-Stat $?
