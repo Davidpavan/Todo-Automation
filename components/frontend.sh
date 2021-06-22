@@ -17,8 +17,12 @@ Head "Installing npm"
 apt install npm -y &>>$LOG
 Stat $?
 
-DOWNLOAD_COMPONENT
+Head "Remove Default Configuration"
+rm -rf /var/www/html/* /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
+cd /var/www/html
+Stat $?
 
+DOWNLOAD_COMPONENT
 
 Head "Build packages"
 
@@ -27,13 +31,9 @@ Stat $?
 
 Head "Update Nginx Configuration"
 
-sed -i -e 's+/var/www/html+/root/frontend/dist+g' /etc/nginx/sites-available/default
+mv todo.conf /etc/nginx/sites-enabled/todo.conf
 Stat $?
 
-Head " Export DOMAINS"
-
-export AUTH_API_ADDRESS=http://192.168.0.241:8080 && export TODOS_API_ADDRESS=http://192.168.0.231:8080
-Stat $?
 
 Head "Restart Nginx service"
 
