@@ -32,7 +32,7 @@ Stat $?
 
 Head " Export DOMAINS"
 
-export AUTH_API_ADDRESS=http://login.pavanzs.online:8080 && export TODOS_API_ADDRESS=http://todo.pavanzs.online:8080
+export AUTH_API_ADDRESS=http://192.168.0.241:8080 && export TODOS_API_ADDRESS=http://192.168.0.231:8080
 Stat $?
 
 Head "Restart Nginx service"
