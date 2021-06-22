@@ -5,7 +5,7 @@ source components/common.sh
 OS_PREREQ
 
 Head "Install NPM"
-
+cd
 apt install npm -y &>>$LOG
 Stat $?
 
@@ -15,7 +15,7 @@ npm install &>>$LOG
 Stat $?
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/REDIS_DNSNAME/redis.pavanzs.online/" /root/Todo-Automation/todo/todo.service &>>$LOG
+sed -i -e "s/REDIS_DNSNAME/192.168.0.147/" /root/Todo-Automation/todo/todo.service &>>$LOG
 
 Head "Moving Servicefile"
 mv /root/Todo-Automation/todo/todo.service /etc/systemd/system/todo.service &>>$LOG
