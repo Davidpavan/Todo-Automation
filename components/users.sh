@@ -6,7 +6,7 @@ OS_PREREQ
 
 Head "Installing java-8"
 
-apt update
+cd
 apt remove openjdk-11-jdk-headless &>>$LOG
 apt install openjdk-8-jdk -y &>>$LOG
 Stat $?
@@ -17,12 +17,13 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
+cd users
 mvn clean package &>>$LOG
 Stat $?
 
 Head "Updating service"
 
-mv /root/Todo-Automation/users/users.service /etc/systemd/system/users.service &>>$LOG
+mv /root/users/users.service /etc/systemd/system/users.service &>>$LOG
 
 Head "Starting Service"
 
