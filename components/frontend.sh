@@ -34,6 +34,10 @@ Head "Update Nginx Configuration"
 mv todo.conf /etc/nginx/sites-enabled/todo.conf
 Stat $?
 
+Head "Update EndPoints in Conf File"
+sed -i -e "s/USERS_DNSNAME/users.pavanzs.online/" /root/go/src/login/login.service
+Stat $?
+
 
 Head "Restart Nginx service"
 
