@@ -35,7 +35,7 @@ mv todo.conf /etc/nginx/sites-enabled/todo.conf
 Stat $?
 
 Head "Update EndPoints in Conf File"
-sed -i -e "s/TODO_IP_ADDR/192.168.0.167/" /etc/nginx/sites-enabled/todo.conf && sed -i -e "s/LOGIN_IP_ADDR/192.168.0.93/" /etc/nginx/sites-enabled/todo.conf
+sed -i -e "s/TODO_IP_ADDR/192.168.0.167/" /etc/nginx/sites-enabled/todo.conf && sed -i -e "s/LOGIN_IP_ADDR/192.168.0.227/" /etc/nginx/sites-enabled/todo.conf
 Stat $?
 
 
