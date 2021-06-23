@@ -11,6 +11,7 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
+Head "Download Dependencies"
 npm install &>>$LOG
 Stat $?
 
