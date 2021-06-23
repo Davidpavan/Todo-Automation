@@ -16,7 +16,7 @@ npm install &>>$LOG
 Stat $?
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/REDIS_DNSNAME/192.168.0.47/" /root/todo/todo.service &>>$LOG
+sed -i -e "s/REDIS_DNSNAME/redis.pavanzs.online/" /root/todo/todo.service &>>$LOG
 
 Head "Moving Servicefile"
 mv /root/todo/todo.service /etc/systemd/system/todo.service &>>$LOG
