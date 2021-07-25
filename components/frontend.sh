@@ -32,7 +32,7 @@ Stat $?
 Head "Update Nginx Configuration"
 
 mv todo.conf /etc/nginx/sites-enabled/todo.conf
-#Stat $?
+Stat $?
 
 Head "Update EndPoints in Conf File"
 sed -i -e "s/127.0.0.1/192.168.0.76/" /etc/nginx/sites-enabled/todo.conf && sed -i -e "s/127.0.0.2/192.168.0.11/" /etc/nginx/sites-enabled/todo.conf
