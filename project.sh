@@ -8,4 +8,4 @@ ssh ubuntu@172.31.9.222 "git clone https://github.com/Davidpavan/Todo-Automation
 
 ssh ubuntu@172.31.12.236 "git clone https://github.com/Davidpavan/Todo-Automation.git ; cd Todo-Automation ; sudo bash Todo.sh login"
 
-ssh ubuntu@172.31.0.238 "git clone https://github.com/Davidpavan/Todo-Automation.git ; cd Todo-Automation ; sudo bash Todo.sh frontend"
+ssh ubuntu@172.31.9.129 "git clone https://github.com/Davidpavan/Todo-Automation.git ; cd Todo-Automation ; sudo bash Todo.sh frontend"
