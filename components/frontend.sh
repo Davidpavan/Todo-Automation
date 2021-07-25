@@ -18,7 +18,7 @@ sudo apt install npm -y &>>$LOG
 Stat $?
 
 Head "Remove Default Configuration"
-sudo rm -rf /var/www/html/* /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
+rm -rf /var/www/html/* /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
 cd /var/www/html
 Stat $?
 
