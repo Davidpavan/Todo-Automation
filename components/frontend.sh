@@ -26,7 +26,7 @@ DOWNLOAD_COMPONENT
 
 Head "Build packages"
 
-npm install && npm run build
+sudo npm install && sudo npm run build
 Stat $?
 
 Head "Update Nginx Configuration"
