@@ -26,8 +26,8 @@ DOWNLOAD_COMPONENT
 
 Head "Build packages"
 
-npm install && npm run build
-#Stat $?
+npm install &>>$LOG && npm run build &>>$LOG
+Stat $?
 
 Head "Update Nginx Configuration"
 
