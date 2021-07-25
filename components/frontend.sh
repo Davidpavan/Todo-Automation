@@ -19,7 +19,7 @@ Stat $?
 
 Head "Remove Default Configuration"
 sudo rm -rf /var/www/html/* /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
-sudo cd /var/www/html
+cd /var/www/html
 Stat $?
 
 DOWNLOAD_COMPONENT
