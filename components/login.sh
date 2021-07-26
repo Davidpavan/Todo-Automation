@@ -10,7 +10,7 @@ apt install golang-go -y &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-if [ -d "~/go"]
+if [ -d "~/go" ]
 then
   cd ~/go/src/ && git clone https://github.com/Davidpavan/login.git && cd login
 fi
