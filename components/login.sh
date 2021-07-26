@@ -11,11 +11,11 @@ Stat $?
 
 Head " Creating a new directory"
 
-if [ ! -d "~/go" ]
-then
-  mkdir ~/go && cd ~/go && mkdir src && git clone https://github.com/Davidpavan/login.git && cd login
-fi
-Stat $?
+#if [ ! -d "~/go" ]
+#then
+#  mkdir ~/go && cd ~/go && mkdir src && git clone https://github.com/Davidpavan/login.git && cd login
+#fi
+#Stat $?
 
 if [ -d "~/go" ]
 then
