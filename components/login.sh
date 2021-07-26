@@ -15,7 +15,7 @@ go version &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-mkdir -p ~/go && cd ~/go && mkdir -p src && cd src &>>$LOG
+mkdir -p ~/go && cd ~/go && mkdir src && cd src &>>$LOG
 Stat $?
 
 DOWNLOAD_COMPONENT
@@ -26,11 +26,11 @@ go get &>>$LOG && go build &>>$LOG
 Stat $?
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/USERS_DNSNAME/192.168.0.67/" ~/go/src/login/login.service
+sed -i -e "s/USERS_DNSNAME/192.168.0.67/" /root/go/src/login/login.service
 Stat $?
 
 Head "Creating Service"
-mv ~/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
+mv /root/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
 
 Head "starting service"
 systemctl daemon-reload && systemctl enable login &>>$LOG && systemctl start login
