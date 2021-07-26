@@ -12,13 +12,11 @@ Stat $?
 Head " Creating a new directory"
 if [ -d "~/go" ]
 then
-  cd ~/go/src/
+  cd ~/go/src/DOWNLOAD_COMPONENT
   #Kmkdir ~/go && cd ~/go && mkdir src && cd src
 fi
 #mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
 Stat $?
-
-DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
 export GOPATH=~/go &>>$LOG
