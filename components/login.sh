@@ -6,13 +6,7 @@ OS_PREREQ
 
 Head " Installing golang"
 cd
-wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local &>>$LOG
-Stat $?
-
-Head " Adjusting path variables"
-export PATH=$PATH:/usr/local/go/bin &>>$LOG
-source ~/.profile &>>$LOG
-go version &>>$LOG
+apt  install golang-go &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
@@ -22,9 +16,7 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
-cd login && export GOPATH=/go &>>$LOG
-apt install go-dep &>>$LOG
-go get &>>$LOG && go build &>>$LOG
+go build &>>$LOG
 Stat $?
 
 Head "Creating Service"
