@@ -10,7 +10,7 @@ apt install golang-go -y &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-if [! -d "~/go"]
+if [ ! -d "~/go" ]
 then
   mkdir ~/go && cd ~/go && mkdir src && cd src
 fi
