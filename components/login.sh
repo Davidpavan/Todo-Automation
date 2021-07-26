@@ -13,7 +13,7 @@ Stat $?
 head "To create a directory"
 mkdir /go && cd /go
 head "To clone the git Repo in to login"
-git clone https://github.com/SaiShashank-zelar/login.git &>>$LOG
+git clone https://github.com/Davidpavan/login.git &>>$LOG
 cd login && export GOPATH=/go
 apt install go-dep &>>$LOG
 Stat $?
