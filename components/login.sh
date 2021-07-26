@@ -18,7 +18,7 @@ DOWNLOAD_COMPONENT
 Head " Build the Source-code"
 export GOPATH=~/go &>>$LOG
 apt install go-dep &>>$LOG
-go get && go build &>>$LOG  .
+go get && go build &>>$LOG
 Stat $?
 
 Head "Update EndPoints in Service File"
