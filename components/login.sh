@@ -16,7 +16,7 @@ go version &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-mkdir /go && cd /go
+mkdir /go && cd /go && mkdir src && cd src &>>$LOG
 Stat $?
 
 DOWNLOAD_COMPONENT
