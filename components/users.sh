@@ -22,7 +22,7 @@ Stat $?
 
 Head "Updating service"
 
-sudo mv /root/users/users.service /etc/systemd/system/users.service &>>$LOG
+sudo cp /root/users/users.service /etc/systemd/system/users.service &>>$LOG
 
 Head "Starting Service"
 
