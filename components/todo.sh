@@ -16,10 +16,10 @@ sudo npm install &>>$LOG
 Stat $?
 
 Head "Update EndPoints in Service File"
-sudo sed -i -e "s/REDIS_DNSNAME/192.168.0.4/" /root/todo/todo.service &>>$LOG
+sudo sed -i -e "s/REDIS_DNSNAME/192.168.0.110/" /root/todo/todo.service &>>$LOG
 
 Head "Moving Servicefile"
-sudo mv /root/todo/todo.service /etc/systemd/system/todo.service &>>$LOG
+sudo cp /root/todo/todo.service /etc/systemd/system/todo.service &>>$LOG
 
 Head "Starting Service"
 sudo systemctl daemon-reload && sudo systemctl enable todo &>>$LOG && sudo systemctl start todo
