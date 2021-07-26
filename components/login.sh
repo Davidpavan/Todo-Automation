@@ -21,6 +21,7 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
+cd ~/go/src/login
 export GOPATH=~/go &>>$LOG
 apt install go-dep &>>$LOG
 go get && go build &>>$LOG
