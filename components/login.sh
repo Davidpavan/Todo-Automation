@@ -27,9 +27,11 @@ Stat $?
 
 Head "Update EndPoints in Service File"
 sed -i -e "s/USERS_DNSNAME/192.168.0.67/" /root/go/src/login/login.service &>>$LOG
+Stat $?
 
 Head "Creating Service"
-mv /root/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
+cp /root/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
+Stat $?
 
 Head "starting service"
 systemctl daemon-reload && systemctl enable login &>>$LOG && systemctl start login
