@@ -22,7 +22,7 @@ DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
 export GOPATH=~/go &>>$LOG
-go get &>>$LOG && go build &>>$LOG
+sudo go get &>>$LOG && sudo go build &>>$LOG
 Stat $?
 
 Head "Update EndPoints in Service File"
