@@ -6,7 +6,7 @@ OS_PREREQ
 
 Head " Installing golang"
 cd
-apt  install golang-go
+apt install golang-go
 Stat $?
 
 Head " Creating a new directory"
