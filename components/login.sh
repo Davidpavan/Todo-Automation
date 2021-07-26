@@ -18,10 +18,10 @@ fi
 #mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
 Stat $?
 
+cd ~/go/src/
 DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
-cd ~/go/src/login
 export GOPATH=~/go &>>$LOG
 apt install go-dep &>>$LOG
 go get && go build &>>$LOG
