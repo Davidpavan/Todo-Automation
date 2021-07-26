@@ -10,10 +10,11 @@ apt install golang-go -y &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
+if [ -d "~/go"]
+then
+  cd ~/go/src/ && git clone https://github.com/Davidpavan/login.git && cd login
+fi
 Stat $?
-
-DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
 export GOPATH=~/go &>>$LOG
