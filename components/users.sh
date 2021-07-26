@@ -7,24 +7,24 @@ OS_PREREQ
 Head "Installing java-8"
 
 cd
-sudo apt remove openjdk-11-jdk-headless &>>$LOG
-sudo apt install openjdk-8-jdk -y &>>$LOG
+apt remove openjdk-11-jdk-headless &>>$LOG
+apt install openjdk-8-jdk -y &>>$LOG
 Stat $?
 
 Head "Installing maven"
-sudo apt install maven -y &>>$LOG
+apt install maven -y &>>$LOG
 Stat $?
 
 DOWNLOAD_COMPONENT
 
-sudo mvn clean package &>>$LOG
+mvn clean package &>>$LOG
 Stat $?
 
 Head "Updating service"
 
-sudo cp /root/users/users.service /etc/systemd/system/users.service &>>$LOG
+cp /root/users/users.service /etc/systemd/system/users.service &>>$LOG
 
 Head "Starting Service"
 
-sudo systemctl daemon-reload && sudo systemctl enable users && sudo systemctl start users
+systemctl daemon-reload && systemctl enable users && systemctl start users
 Stat $?
