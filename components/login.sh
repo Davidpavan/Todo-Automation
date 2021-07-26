@@ -10,13 +10,10 @@ apt install golang-go -y &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-if [ -d "~/go" ]
-then
-  cd ~/go/src/DOWNLOAD_COMPONENT
-  #Kmkdir ~/go && cd ~/go && mkdir src && cd src
-fi
-#mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
+mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
 Stat $?
+
+DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
 export GOPATH=~/go &>>$LOG
@@ -31,6 +28,7 @@ Stat $?
 Head "Creating Service"
 cp /root/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
 Stat $?
+
 
 Head "starting service"
 systemctl daemon-reload && systemctl enable login &>>$LOG && systemctl start login && systemctl restart login
