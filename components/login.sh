@@ -13,9 +13,6 @@ Head " Creating a new directory"
 if [! -d "~/go"]
 then
   mkdir ~/go && cd ~/go && mkdir src && cd src
-else if [ -d "~/go"]
-then
-  cd ~/go/src
 fi
 #mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
 Stat $?
