@@ -15,7 +15,7 @@ go version &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-mkdir -p ~/go && cd ~/go
+mkdir -p ~/go && cd ~/go && mkdir src
 if [ -d "src" ]; then
   cd src
 fi
