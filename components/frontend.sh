@@ -35,7 +35,7 @@ sudo mv todo.conf /etc/nginx/sites-enabled/todo.conf
 Stat $?
 
 Head "Update EndPoints in Conf File"
-sudo sed -i -e "s/127.0.0.1/192.168.0.51/" /etc/nginx/sites-enabled/todo.conf && sudo sed -i -e "s/127.0.0.2/192.168.0.120/" /etc/nginx/sites-enabled/todo.conf
+sudo sed -i -e "s/127.0.0.1/192.168.0.117/" /etc/nginx/sites-enabled/todo.conf && sudo sed -i -e "s/127.0.0.2/192.168.0.49/" /etc/nginx/sites-enabled/todo.conf
 Stat $?
 
 
