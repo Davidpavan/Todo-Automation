@@ -20,6 +20,7 @@ Stat $?
 if [ -d "~/go" ]
 then
   cd ~/go/src/login
+fi
 Stat $?
 
 Head " Build the Source-code"
