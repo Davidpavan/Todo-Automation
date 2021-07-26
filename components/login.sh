@@ -26,7 +26,7 @@ go get &>>$LOG && go build &>>$LOG
 Stat $?
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/USERS_DNSNAME/192.168.0.67/" /root/go/src/login/login.service
+sed -i -e "s/USERS_DNSNAME/192.168.0.67/" ~/go/src/login/login.service
 Stat $?
 
 Head "Creating Service"
