@@ -15,7 +15,7 @@ go version &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-sudo mkdir -p ~/go && sudo cd ~/go && sudo mkdir -p src && sudo cd src &>>$LOG
+sudo mkdir -p ~/go && cd ~/go && sudo mkdir -p src && cd src &>>$LOG
 Stat $?
 
 DOWNLOAD_COMPONENT
