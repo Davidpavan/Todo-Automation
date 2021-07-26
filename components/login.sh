@@ -30,7 +30,7 @@ Stat $?
 #Stat $?
 
 Head "Update EndPoints in Service File"
-cd ~/go/src/login/ && sed -i -e "s/USERS_DNSNAME/192.168.0.65/" /root/go/src/login/login.service &>>$LOG
+cd /go/src/login/ && sed -i -e "s/USERS_DNSNAME/192.168.0.65/" /root/go/src/login/login.service &>>$LOG
 Stat $?
 
 Head "Creating Service"
