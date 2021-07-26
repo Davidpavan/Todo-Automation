@@ -10,13 +10,13 @@ apt  install golang-go &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-mkdir /go && cd /go && mkdir src && cd src &>>$LOG
+mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
 Stat $?
 
 DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
-cd login && export GOPATH=/go &>>$LOG
+cd login && export GOPATH=~/go &>>$LOG
 apt install go-dep &>>$LOG
 go build &>>$LOG
 Stat $?
