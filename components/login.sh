@@ -19,15 +19,15 @@ Stat $?
 
 if [ -d "~/go" ]
 then
-  cd ~/go/src/login
+  cd ~/go/src/login/ && export GOPATH=~/go && apt install go-dep && go get && go build
 fi
 Stat $?
 
-Head " Build the Source-code"
-export GOPATH=~/go &>>$LOG
-apt install go-dep &>>$LOG
-go get && go build &>>$LOG
-Stat $?
+#Head " Build the Source-code"
+#export GOPATH=~/go &>>$LOG
+#apt install go-dep &>>$LOG
+#go get && go build &>>$LOG
+#Stat $?
 
 Head "Update EndPoints in Service File"
 sed -i -e "s/USERS_DNSNAME/192.168.0.65/" /root/go/src/login/login.service &>>$LOG
