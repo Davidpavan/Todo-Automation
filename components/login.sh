@@ -5,7 +5,7 @@ source components/common.sh
 OS_PREREQ
 
 Head " Installing golang"
-wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | tar -xz -C /usr/local &>>$LOG
+wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local &>>$LOG
 Stat $?
 
 Head " Adjusting path variables"
