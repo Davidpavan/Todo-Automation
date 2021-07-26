@@ -1,41 +1,34 @@
 #!/bin/bash
-
 source components/common.sh
-
 OS_PREREQ
-
-Head " Installing golang"
+head "Installing golang"
+cd /root
 wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local &>>$LOG
+export PATH=$PATH:/usr/local/go/bin
+source ~/.profile
 Stat $?
-
-Head " Adjusting path variables"
-export PATH=$PATH:/usr/local/go/bin &>>$LOG
-source ~/.profile &>>$LOG
-go version &>>$LOG
+head "version of golang"
+go version
 Stat $?
-
-Head " Creating a new directory"
-mkdir -p ~/go && cd ~/go && mkdir src
-if [ -d "src" ]; then
-  cd src
-fi
+head "To create a directory"
+mkdir /go && cd /go
+head "To clone the git Repo in to login"
+git clone https://github.com/SaiShashank-zelar/login.git &>>$LOG
+cd login && export GOPATH=/go
+apt install go-dep &>>$LOG
 Stat $?
-
-DOWNLOAD_COMPONENT
-
-Head " Build the Source-code"
-export GOPATH=~/go &>>$LOG
-go get &>>$LOG && go build &>>$LOG
+head "to build the golang"
+go get
+go build
 Stat $?
-
-Head "Update EndPoints in Service File"
-sed -i -e "s/USERS_DNSNAME/192.168.0.65/" /root/go/src/login/login.service &>>$LOG
+head "To create a systemd file"
+mv login.service /etc/systemd/system/login.service &>>$LOG
+head "Update EndPoints in Service File"
+sed -i -e "s/localhost/192.168.0.65/" /etc/systemd/system/login.service
 Stat $?
-
-Head "Creating Service"
-cp /root/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
-Stat $?
-
-Head "starting service"
-systemctl daemon-reload && systemctl enable login &>>$LOG && systemctl start login
+head "To start a service"
+systemctl daemon-reload &&
+service login start &&
+service login restart &&
+service login status
 Stat $?
