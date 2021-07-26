@@ -5,7 +5,7 @@ source components/common.sh
 OS_PREREQ
 
 Head " Installing golang"
-wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | tar -xz -C /usr/local &>>$LOG
+sudo wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | tar -xz -C /usr/local &>>$LOG
 Stat $?
 
 Head " Adjusting path variables"
@@ -15,24 +15,24 @@ go version &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-mkdir -p ~/go && cd ~/go && mkdir -p src && cd src &>>$LOG
+sudo mkdir -p ~/go && sudo cd ~/go && sudo mkdir -p src && sudo cd src &>>$LOG
 Stat $?
 
 DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
 export GOPATH=~/go &>>$LOG
-go get &>>$LOG && go build &>>$LOG
+sudo go get &>>$LOG && sudo go build &>>$LOG
 Stat $?
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/USERS_DNSNAME/192.168.0.67/" /root/go/src/login/login.service &>>$LOG
+sudo sed -i -e "s/USERS_DNSNAME/192.168.0.67/" /root/go/src/login/login.service &>>$LOG
 Stat $?
 
 Head "Creating Service"
-cp /root/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
+sudo cp /root/go/src/login/login.service /etc/systemd/system/login.service &>>$LOG
 Stat $?
 
 Head "starting service"
-systemctl daemon-reload && systemctl enable login &>>$LOG && systemctl start login
+sudo systemctl daemon-reload && sudo systemctl enable login &>>$LOG && sudo systemctl start login
 Stat $?
