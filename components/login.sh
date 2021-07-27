@@ -16,7 +16,7 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head " Build the Source-code"
-export GOPATH=~/go &>>$LOG
+#export GOPATH=~/go &>>$LOG
 apt install go-dep &>>$LOG
 go get && go build &>>$LOG
 Stat $?
