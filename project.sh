@@ -1,6 +1,6 @@
 #! /bin/bash
 
-sshpass -p 'DevOps321' ssh ubuntu@192.168.0.18 "git clone https://github.com/Davidpavan/Todo-Automation.git ; cd Todo-Automation ; sudo bash Todo.sh frontend"
+sshpass -p 'DevOps321' ssh ubuntu@192.168.0.81 "git clone https://github.com/Davidpavan/Todo-Automation.git ; cd Todo-Automation ; sudo bash Todo.sh frontend"
 
 sshpass -p 'DevOps321' ssh ubuntu@192.168.0.59 "git clone https://github.com/Davidpavan/Todo-Automation.git ; cd Todo-Automation ; sudo bash Todo.sh login"
 
