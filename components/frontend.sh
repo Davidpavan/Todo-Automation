@@ -31,7 +31,7 @@ Stat $?
 
 Head "Update Nginx Configuration"
 
-mv todo.conf /etc/nginx/sites-enabled/todo.conf
+mv todo.conf /etc/nginx/sites-enabled/todo.conf .
 Stat $?
 
 Head "Update EndPoints in Conf File"
