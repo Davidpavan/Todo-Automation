@@ -11,7 +11,7 @@ Stat $?
 
 Head " Creating a new directory"
 if [ -d "/root/go/src" ]; then
-  cd ~/go && mkdir src && cd src &>>$LOG
+  cd ~/go && cd src &>>$LOG
 else
   mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
 fi
