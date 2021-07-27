@@ -10,7 +10,12 @@ apt install golang-go -y &>>$LOG
 Stat $?
 
 Head " Creating a new directory"
-mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
+if [ -d "~/go" ]; then
+  cd ~/go && mkdir src && cd src &>>$LOG
+else
+  mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
+fi
+#mkdir ~/go && cd ~/go && mkdir src && cd src &>>$LOG
 Stat $?
 
 DOWNLOAD_COMPONENT
