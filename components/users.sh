@@ -17,6 +17,7 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
+Head "Packaging the code"
 mvn clean package &>>$LOG
 Stat $?
 
