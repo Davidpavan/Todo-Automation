@@ -24,6 +24,7 @@ Stat $?
 Head "Updating service"
 
 cp /root/users/users.service /etc/systemd/system/users.service &>>$LOG
+Stat $?
 
 Head "Starting Service"
 
